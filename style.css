@@ -1,0 +1,234 @@
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+font-family: 'Inter', sans-serif;
+scroll-behavior: smooth;
+}
+.masonry-grid {
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+grid-gap: 24px;
+grid-auto-flow: dense;
+}
+.masonry-item:nth-child(3n+1) {
+grid-row: span 1;
+}
+.masonry-item:nth-child(3n+2) {
+grid-row: span 2;
+}
+.masonry-item:nth-child(3n+3) {
+grid-row: span 1;
+}
+.project-card {
+position: relative;
+overflow: hidden;
+height: 100%;
+}
+.project-overlay {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: rgba(0, 0, 0, 0.7);
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+opacity: 0;
+transition: opacity 0.3s ease;
+}
+.project-card:hover .project-overlay {
+opacity: 1;
+}
+.cursor-dot {
+position: fixed;
+width: 8px;
+height: 8px;
+background-color: #3b82f6;
+border-radius: 50%;
+pointer-events: none;
+z-index: 9999;
+transform: translate(-50%, -50%);
+transition: width 0.2s, height 0.2s;
+}
+.cursor-outline {
+position: fixed;
+width: 40px;
+height: 40px;
+border: 1px solid rgba(59, 130, 246, 0.5);
+border-radius: 50%;
+pointer-events: none;
+z-index: 9998;
+transform: translate(-50%, -50%);
+transition: width 0.2s, height 0.2s, border-color 0.2s;
+}
+.interactive:hover ~ .cursor-dot {
+width: 12px;
+height: 12px;
+}
+.interactive:hover ~ .cursor-outline {
+width: 60px;
+height: 60px;
+border-color: rgba(59, 130, 246, 0.8);
+}
+.custom-checkbox {
+appearance: none;
+-webkit-appearance: none;
+width: 20px;
+height: 20px;
+border: 2px solid #e5e7eb;
+border-radius: 4px;
+outline: none;
+cursor: pointer;
+position: relative;
+transition: all 0.2s ease;
+}
+.custom-checkbox:checked {
+background-color: #3b82f6;
+border-color: #3b82f6;
+}
+.custom-checkbox:checked::after {
+content: '';
+position: absolute;
+top: 4px;
+left: 7px;
+width: 5px;
+height: 10px;
+border: solid white;
+border-width: 0 2px 2px 0;
+transform: rotate(45deg);
+}
+.custom-switch {
+position: relative;
+display: inline-block;
+width: 50px;
+height: 24px;
+}
+.custom-switch input {
+opacity: 0;
+width: 0;
+height: 0;
+}
+.switch-slider {
+position: absolute;
+cursor: pointer;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: #e5e7eb;
+transition: .4s;
+border-radius: 34px;
+}
+.switch-slider:before {
+position: absolute;
+content: "";
+height: 18px;
+width: 18px;
+left: 3px;
+bottom: 3px;
+background-color: white;
+transition: .4s;
+border-radius: 50%;
+}
+input:checked + .switch-slider {
+background-color: #3b82f6;
+}
+input:checked + .switch-slider:before {
+transform: translateX(26px);
+}
+.custom-range {
+-webkit-appearance: none;
+width: 100%;
+height: 4px;
+background: #e5e7eb;
+border-radius: 5px;
+outline: none;
+}
+.custom-range::-webkit-slider-thumb {
+-webkit-appearance: none;
+appearance: none;
+width: 18px;
+height: 18px;
+background: #3b82f6;
+border-radius: 50%;
+cursor: pointer;
+}
+.custom-range::-moz-range-thumb {
+width: 18px;
+height: 18px;
+background: #3b82f6;
+border-radius: 50%;
+cursor: pointer;
+border: none;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+-webkit-appearance: none;
+margin: 0;
+}
+.nav-link {
+position: relative;
+}
+.nav-link::after {
+content: '';
+position: absolute;
+width: 0;
+height: 2px;
+bottom: -4px;
+left: 0;
+background-color: #3b82f6;
+transition: width 0.3s ease;
+}
+.nav-link:hover::after {
+width: 100%;
+}
+.hero-gradient {
+background: linear-gradient(135deg, #f8fafc 0%, #eff6ff 100%);
+}
+.filter-active {
+background-color: #3b82f6;
+color: white;
+}
+.lightbox {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0, 0, 0, 0.9);
+display: none;
+justify-content: center;
+align-items: center;
+z-index: 1000;
+}
+.lightbox-content {
+max-width: 90%;
+max-height: 90%;
+}
+.lightbox-close {
+position: absolute;
+top: 20px;
+right: 20px;
+color: white;
+font-size: 30px;
+cursor: pointer;
+}
+.skill-bar {
+height: 8px;
+background-color: #e5e7eb;
+border-radius: 4px;
+margin-bottom: 24px;
+}
+.skill-progress {
+height: 100%;
+background-color: #3b82f6;
+border-radius: 4px;
+}
+
+.mb-8{
+    color: rgb(104, 100, 100);
+    font-family:'Times New Roman', Times, serif ;
+    font-size: large;
+}
+

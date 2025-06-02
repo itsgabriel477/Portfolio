@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nwambu Gabriel - Web Designer Portfolio</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3b82f6',
+                        secondary: '#6366f1'
+                    },
+                    borderRadius: {
+                        'none': '0px',
+                        'sm': '4px',
+                        DEFAULT: '8px',
+                        'md': '12px',
+                        'lg': '16px',
+                        'xl': '20px',
+                        '2xl': '24px',
+                        '3xl': '32px',
+                        'full': '9999px',
+                        'button': '8px'
+                    }
+                }
+            }
+        }
+    </script>
+    <script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+    (function(){
+    emailjs.init({
+        publicKey: "mbfmVQL4MgmiAOXr2",
+    });
+    })();
+</script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Remix Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-gray-900 text-gray-200">
+    <div id="top"></div>
+    <!-- Header Section -->
+    <header class="fixed top-0 left-0 w-full bg-gray-900 bg-opacity-95 shadow-sm z-50 px-6 py-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="#" class="text-2xl font-['Pacifico'] text-white">Gabriels Grid</a>
+            
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex space-x-8 items-center">
+                <a href="#work" class="nav-link text-gray-700 hover:text-primary font-medium transition-colors">Work</a>
+                <a href="#about" class="nav-link text-gray-700 hover:text-primary font-medium transition-colors">About</a>
+                <a href="#contact" class="nav-link text-gray-700 hover:text-primary font-medium transition-colors">Contact</a>
+            </nav>
+            
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden w-10 h-10 flex items-center justify-center text-gray-700">
+                <i class="ri-menu-line ri-lg"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white absolute w-full left-0 top-full border-t border-gray-100 py-4">
+            <div class="container mx-auto px-6 flex flex-col space-y-4">
+                <a href="#work" class="text-gray-700 hover:text-primary font-medium py-2 transition-colors">Work</a>
+                <a href="#about" class="text-gray-700 hover:text-primary font-medium py-2 transition-colors">About</a>
+                <a href="#contact" class="text-gray-700 hover:text-primary font-medium py-2 transition-colors">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient pt-24 lg:pt-32 pb-16 lg:pb-20 px-4 lg:px-6">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row items-center justify-between">
+                <div class="w-full lg:w-1/2 mb-12 lg:mb-0">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                        Creating 
+                        <span class="text-primary">digital experiences</span> that inspire
+                    </h1>
+                    <p class="text-xl text-gray-600 mb-8 max-w-lg">
+                        I'm Nwambu Gabriel, a web designer focused on crafting clean, user-centered interfaces that deliver exceptional experiences.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#work" class="bg-primary text-white px-6 py-3 rounded-button font-medium hover:bg-blue-600 transition-colors shadow-md whitespace-nowrap">
+                            View My Work
+                        </a>
+                        <a href="#contact" class="border border-gray-300 px-6 py-3 rounded-button font-medium hover:bg-gray-50 transition-colors whitespace-nowrap">
+                            Get in Touch
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2 relative">
+                    <img src="Public/Images/IMG-20250515-WA0057.jpg" alt="Web Designer Workspace" class="rounded-lg shadow-xl object-cover object-top">
+                    <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-lg shadow-lg">
+                        <p class="text-sm font-medium text-gray-900">5+ Years Experience</p>
+                        <p class="text-xs text-gray-500">100+ Projects Delivered</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="work" class="py-20 px-6">
+        <div class="container mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Selected Work</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Explore my latest projects showcasing clean design, intuitive interfaces, and engaging user experiences.</p>
+            </div>
+            
+            <!-- Portfolio Filter -->
+            <div class="flex flex-wrap justify-center gap-3 mb-12">
+                <button class="filter-btn filter-active px-5 py-2 rounded-full text-sm font-medium transition-colors whitespace-nowrap !rounded-button" data-filter="all">All Projects</button>
+                <button class="filter-btn px-5 py-2 rounded-full text-sm font-medium bg-gray-100 hover:bg-gray-200 transition-colors whitespace-nowrap !rounded-button" data-filter="web">Web Design</button>
+                <button class="filter-btn px-5 py-2 rounded-full text-sm font-medium bg-gray-100 hover:bg-gray-200 transition-colors whitespace-nowrap !rounded-button" data-filter="mobile">Mobile UI</button>
+                <button class="filter-btn px-5 py-2 rounded-full text-sm font-medium bg-gray-100 hover:bg-gray-200 transition-colors whitespace-nowrap !rounded-button" data-filter="branding">Branding</button>
+            </div>
+            
+            <!-- Portfolio Grid -->
+            <div class="masonry-grid">
+                <!-- Project 1 -->
+                <div class="masonry-item" data-category="web">
+                    <div class="project-card rounded-lg overflow-hidden shadow-md interactive">
+                        <img src="https://readdy.ai/api/search-image?query=modern%20e-commerce%20website%20design%20on%20computer%20screen%2C%20clean%20minimalist%20interface%20with%20product%20grid%20layout%2C%20professional%20high-quality%20product%20photography%2C%20light%20color%20scheme%2C%20elegant%20typography%2C%20clear%20navigation%2C%20shopping%20cart%20icon%2C%20high-end%20fashion%20products&width=600&height=500&seq=proj1&orientation=portrait" alt="E-commerce Website Design" class="w-full h-full object-cover object-top">
+                        <div class="project-overlay p-6 text-center">
+                            <h3 class="text-white text-xl font-semibold mb-2">Luxe Boutique</h3>
+                            <p class="text-gray-300 mb-4">E-commerce Website</p>
+                            <a href="#" class="view-project text-white bg-primary bg-opacity-90 px-4 py-2 rounded-button text-sm font-medium hover:bg-opacity-100 transition-colors whitespace-nowrap">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="masonry-item" data-category="mobile">
+                    <div class="project-card rounded-lg overflow-hidden shadow-md interactive">
+                        <img src="https://readdy.ai/api/search-image?query=mobile%20app%20interface%20design%20for%20fitness%20tracking%20application%2C%20clean%20UI%20with%20activity%20metrics%2C%20workout%20progress%20charts%2C%20minimal%20color%20scheme%2C%20modern%20typography%2C%20user%20profile%20screen%2C%20activity%20dashboard%2C%20professional%20mobile%20UI%20mockup%20on%20smartphone%20device&width=600&height=800&seq=proj2&orientation=portrait" alt="Fitness App UI Design" class="w-full h-full object-cover object-top">
+                        <div class="project-overlay p-6 text-center">
+                            <h3 class="text-white text-xl font-semibold mb-2">FitTrack Pro</h3>
+                            <p class="text-gray-300 mb-4">Mobile App UI</p>
+                            <a href="#" class="view-project text-white bg-primary bg-opacity-90 px-4 py-2 rounded-button text-sm font-medium hover:bg-opacity-100 transition-colors whitespace-nowrap">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="masonry-item" data-category="branding">
+                    <div class="project-card rounded-lg overflow-hidden shadow-md interactive">
+                        <img src="https://readdy.ai/api/search-image?query=brand%20identity%20design%20mockup%20for%20a%20coffee%20company%2C%20logo%20design%20on%20various%20branded%20items%20including%20coffee%20cups%2C%20business%20cards%2C%20packaging%2C%20signage%2C%20minimal%20and%20elegant%20design%20style%2C%20earthy%20color%20palette%2C%20professional%20branding%20photography%20on%20clean%20background&width=600&height=500&seq=proj3&orientation=landscape" alt="Coffee Brand Identity" class="w-full h-full object-cover object-top">
+                        <div class="project-overlay p-6 text-center">
+                            <h3 class="text-white text-xl font-semibold mb-2">Aroma Craft</h3>
+                            <p class="text-gray-300 mb-4">Brand Identity</p>
+                            <a href="#" class="view-project text-white bg-primary bg-opacity-90 px-4 py-2 rounded-button text-sm font-medium hover:bg-opacity-100 transition-colors whitespace-nowrap">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 4 -->
+                <div class="masonry-item" data-category="web">
+                    <div class="project-card rounded-lg overflow-hidden shadow-md interactive">
+                        <img src="https://readdy.ai/api/search-image?query=architecture%20firm%20website%20design%20on%20desktop%20screen%2C%20portfolio%20gallery%20with%20high%20quality%20architectural%20photography%2C%20minimalist%20layout%2C%20project%20showcase%20with%20large%20images%2C%20clean%20navigation%2C%20white%20space%2C%20professional%20presentation%20of%20architectural%20projects&width=600&height=700&seq=proj4&orientation=portrait" alt="Architecture Website" class="w-full h-full object-cover object-top">
+                        <div class="project-overlay p-6 text-center">
+                            <h3 class="text-white text-xl font-semibold mb-2">Vertex Architects</h3>
+                            <p class="text-gray-300 mb-4">Portfolio Website</p>
+                            <a href="#" class="view-project text-white bg-primary bg-opacity-90 px-4 py-2 rounded-button text-sm font-medium hover:bg-opacity-100 transition-colors whitespace-nowrap">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 5 -->
+                <div class="masonry-item" data-category="mobile">
+                    <div class="project-card rounded-lg overflow-hidden shadow-md interactive">
+                        <img src="https://readdy.ai/api/search-image?query=banking%20mobile%20app%20interface%20design%2C%20financial%20dashboard%20with%20transaction%20history%2C%20account%20balance%2C%20payment%20features%2C%20secure%20login%20screen%2C%20clean%20and%20professional%20UI%20design%2C%20blue%20color%20scheme%2C%20data%20visualization%20charts%2C%20modern%20fintech%20application%20on%20smartphone%20mockup&width=600&height=500&seq=proj5&orientation=landscape" alt="Banking App UI" class="w-full h-full object-cover object-top">
+                        <div class="project-overlay p-6 text-center">
+                            <h3 class="text-white text-xl font-semibold mb-2">SecureBank</h3>
+                            <p class="text-gray-300 mb-4">Mobile Banking UI</p>
+                            <a href="#" class="view-project text-white bg-primary bg-opacity-90 px-4 py-2 rounded-button text-sm font-medium hover:bg-opacity-100 transition-colors whitespace-nowrap">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 6 -->
+                <div class="masonry-item" data-category="branding">
+                    <div class="project-card rounded-lg overflow-hidden shadow-md interactive">
+                        <img src="https://readdy.ai/api/search-image?query=restaurant%20branding%20and%20menu%20design%2C%20elegant%20food%20menu%20layout%20with%20beautiful%20typography%2C%20logo%20design%20for%20upscale%20restaurant%2C%20business%20cards%2C%20signage%2C%20wine%20list%2C%20cohesive%20brand%20identity%20system%2C%20professional%20food%20photography%20integration%2C%20luxury%20dining%20experience&width=600&height=800&seq=proj6&orientation=portrait" alt="Restaurant Branding" class="w-full h-full object-cover object-top">
+                        <div class="project-overlay p-6 text-center">
+                            <h3 class="text-white text-xl font-semibold mb-2">Saveur Bistro</h3>
+                            <p class="text-gray-300 mb-4">Restaurant Branding</p>
+                            <a href="#" class="view-project text-white bg-primary bg-opacity-90 px-4 py-2 rounded-button text-sm font-medium hover:bg-opacity-100 transition-colors whitespace-nowrap">View Project</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Project Section -->
+    <section class="py-20 px-6 bg-gray-50">
+        <div class="container mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Featured Project</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">An in-depth look at one of my recent projects showcasing the design process from concept to completion.</p>
+            </div>
+            
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                <div class="flex flex-col lg:flex-row">
+                    <div class="w-full lg:w-3/5">
+                        <img src="https://readdy.ai/api/search-image?query=responsive%20website%20design%20for%20travel%20agency%20showing%20desktop%2C%20tablet%20and%20mobile%20versions%2C%20beautiful%20travel%20destination%20imagery%2C%20booking%20interface%2C%20clean%20modern%20UI%20design%2C%20trip%20planning%20features%2C%20high%20quality%20travel%20photography%20with%20scenic%20landscapes%2C%20professional%20web%20design%20presentation&width=800&height=600&seq=featured&orientation=landscape" alt="Travel Website Design" class="w-full h-full object-cover object-top">
+                    </div>
+                    
+                    <div class="w-full lg:w-2/5 p-6 lg:p-10">
+                        <h3 class="text-2xl font-bold mb-4">Wanderlust Travel Platform</h3>
+                        <p class="text-gray-600 mb-6">A complete redesign of an established travel booking platform focusing on improving user experience and conversion rates.</p>
+                        
+                        <div class="mb-6">
+                            <h4 class="text-lg font-semibold mb-2">Project Scope</h4>
+                            <ul class="text-gray-600 space-y-2">
+                                <li class="flex items-start">
+                                    <span class="w-5 h-5 flex items-center justify-center text-primary mr-2 mt-0.5">
+                                        <i class="ri-check-line"></i>
+                                    </span>
+                                    Responsive website design
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="w-5 h-5 flex items-center justify-center text-primary mr-2 mt-0.5">
+                                        <i class="ri-check-line"></i>
+                                    </span>
+                                    Booking system UI redesign
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="w-5 h-5 flex items-center justify-center text-primary mr-2 mt-0.5">
+                                        <i class="ri-check-line"></i>
+                                    </span>
+                                    User experience optimization
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="w-5 h-5 flex items-center justify-center text-primary mr-2 mt-0.5">
+                                        <i class="ri-check-line"></i>
+                                    </span>
+                                    Visual identity refresh
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <h4 class="text-lg font-semibold mb-2">Results</h4>
+                            <div class="flex flex-wrap gap-4">
+                                <div class="bg-gray-50 px-4 py-3 rounded-lg">
+                                    <p class="text-primary font-bold text-xl">+42%</p>
+                                    <p class="text-gray-500 text-sm">Conversion Rate</p>
+                                </div>
+                                <div class="bg-gray-50 px-4 py-3 rounded-lg">
+                                    <p class="text-primary font-bold text-xl">-38%</p>
+                                    <p class="text-gray-500 text-sm">Bounce Rate</p>
+                                </div>
+                                <div class="bg-gray-50 px-4 py-3 rounded-lg">
+                                    <p class="text-primary font-bold text-xl">+65%</p>
+                                    <p class="text-gray-500 text-sm">Mobile Bookings</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 px-6">
+        <div class="container mx-auto">
+            <div class="md:flex md:space-x-12 items-center">
+                <div class="md:w-2/5 mb-12 md:mb-0">
+                    <div class="relative">
+                        <img src="Public/Images/IMG-20250515-WA0007.jpg" alt="Alex Morgan - Web Designer" class="rounded-lg shadow-lg object-cover object-top">
+                        
+                    </div>
+                </div>
+                
+                <div class="md:w-3/5">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">About Me</h2>
+                    <p class="text-gray-600 mb-6">
+                        I'm Nwambu Gabriel, 
+                        a web designer with over 5 years of experience creating thoughtful digital experiences. 
+                        Based in Port Harcourt, Nigeria, I work with clients globally to transform their ideas into beautiful, 
+                        functional websites and applications.
+                    </p>
+                    <p class="text-gray-600 mb-8">
+                        My approach combines clean aesthetics with user-centered design principles. I believe that great design should not only look beautiful but also solve real problems and create meaningful connections between brands and their audiences.
+                    </p>
+                    
+                    <div class="mb-8">
+                        <h3 class="text-xl font-semibold mb-4">Skills & Expertise</h3>
+                        
+                        <div class="mb-4">
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-700 font-medium">UI/UX Design</span>
+                                <span class="text-gray-500">95%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-700 font-medium">Responsive Web Design</span>
+                                <span class="text-gray-500">90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-700 font-medium">Frontend Development</span>
+                                <span class="text-gray-500">85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-700 font-medium">Brand Identity</span>
+                                <span class="text-gray-500">80%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex space-x-4">
+                        
+                        <a href="#contact" class="border border-gray-300 px-6 py-3 rounded-button font-medium hover:bg-gray-50 transition-colors whitespace-nowrap">
+                            Contact Me
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 px-6 bg-gray-50">
+        <div class="container mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Client Testimonials</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">What clients say about working with me and the results we've achieved together.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white p-8 rounded-xl shadow-md">
+                    <div class="flex items-center mb-6">
+                        <div class="text-primary">
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">
+                        "Gabriel transformed our outdated website into a modern, user-friendly platform that perfectly represents our brand. The attention to detail and thoughtful design choices have significantly improved our online presence."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-gray-200 rounded-full overflow-hidden mr-4">
+                            <img src="https://readdy.ai/api/search-image?query=professional%20headshot%20of%20a%20female%20business%20executive%2C%2040s%2C%20business%20attire%2C%20neutral%20background%2C%20confident%20expression%2C%20corporate%20portrait%2C%20high%20quality%20professional%20photograph&width=100&height=100&seq=test1&orientation=squarish" alt="Sarah Johnson" class="w-full h-full object-cover object-top">
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-900">Sarah Johnson</h4>
+                            <p class="text-gray-500 text-sm">Marketing Director, Vertex Architects</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-white p-8 rounded-xl shadow-md">
+                    <div class="flex items-center mb-6">
+                        <div class="text-primary">
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">
+                        "Working with Gabriel on our e-commerce redesign was a game-changer. The intuitive interface and streamlined checkout process have resulted in a 42% increase in conversions. Highly recommended!"
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-gray-200 rounded-full overflow-hidden mr-4">
+                            <img src="https://readdy.ai/api/search-image?query=professional%20headshot%20of%20a%20male%20business%20owner%2C%2030s%2C%20casual%20business%20attire%2C%20neutral%20background%2C%20friendly%20smile%2C%20entrepreneurial%20look%2C%20high%20quality%20professional%20photograph&width=100&height=100&seq=test2&orientation=squarish" alt="Michael Chen" class="w-full h-full object-cover object-top">
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-900">Michael Chen</h4>
+                            <p class="text-gray-500 text-sm">Founder, Luxe Boutique</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-white p-8 rounded-xl shadow-md">
+                    <div class="flex items-center mb-6">
+                        <div class="text-primary">
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">
+                        "Gabriel's design for our mobile app was exceptional. The clean interface and intuitive navigation have received overwhelmingly positive feedback from our users. The entire process was smooth and professional."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-gray-200 rounded-full overflow-hidden mr-4">
+                            <img src="https://readdy.ai/api/search-image?query=professional%20headshot%20of%20a%20female%20tech%20executive%2C%20mid%2030s%2C%20casual%20tech%20company%20attire%2C%20neutral%20background%2C%20confident%20expression%2C%20startup%20founder%20look%2C%20high%20quality%20professional%20photograph&width=100&height=100&seq=test3&orientation=squarish" alt="Emily Rodriguez" class="w-full h-full object-cover object-top">
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-900">Emily Rodriguez</h4>
+                            <p class="text-gray-500 text-sm">Product Manager, FitTrack</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-6">
+        <div class="container mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Get In Touch</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Have a project in mind? Let's discuss how we can work together to create something amazing.</p>
+            </div>
+            
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                <div class="flex flex-col lg:flex-row">
+                    <!-- Contact Info -->
+                    <div class="w-full lg:w-2/5 bg-primary p-6 lg:p-10 text-white">
+                        <h3 class="text-2xl font-bold mb-6">Contact Information</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 flex items-center justify-center mr-4 mt-1">
+                                    <i class="ri-mail-line ri-lg"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium mb-1">Email</h4>
+                                    <p class="opacity-80">cnwambu9@gmail.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 flex items-center justify-center mr-4 mt-1">
+                                    <i class="ri-phone-line ri-lg"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium mb-1">Phone</h4>
+                                    <p class="opacity-80">+234 9039610626</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 flex items-center justify-center mr-4 mt-1">
+                                    <i class="ri-map-pin-line ri-lg"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium mb-1">Location</h4>
+                                    <p class="opacity-80">Elder C. W. Chinda Cresent, GRA Phase 3, Port Harcourt, Nigeria</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                    </div>
+                    
+                    <!-- Contact Form -->
+                    <div class="w-full lg:w-3/5 p-6 lg:p-10">
+                        <form id="contact-form">
+                            <p class="mb-8">Fill out the form and I'll get back to you within 24 hours.</p>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                                <div>
+                                    <label for="name" class="block text-gray-700 font-medium mb-2">Name</label>
+<input type="text" id="name" class="w-full px-4 py-3 border border-gray-700 bg-gray-800 text-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Your name">
+                                </div>
+                                <div>
+                                    <label for="email" class="block text-gray-700 font-medium mb-2">Email</label>
+<input type="email" id="email" class="w-full px-4 py-3 border border-gray-700 bg-gray-800 text-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Your email">
+                                </div>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <label for="subject" class="block text-gray-700 font-medium mb-2">Subject</label>
+<input type="text" id="subject" class="w-full px-4 py-3 border border-gray-700 bg-gray-800 text-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Project inquiry">
+                            </div>
+                            
+                            <div class="mb-6">
+                                <label for="message" class="block text-gray-700 font-medium mb-2">Message</label>
+<textarea id="message" rows="5" class="w-full px-4 py-3 border border-gray-700 bg-gray-800 text-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent resize-none" placeholder="Tell me about your project..."></textarea>
+                            </div>
+                            
+                            
+                            <div class="mb-6">
+                                <label class="block text-gray-700 font-medium mb-2">Budget range</label>
+<input type="range" class="custom-range w-full bg-gray-800 h-6 sm:h-8" min="100" max="5000" step="50" value="5000" id="budget-range" name="budget" >
+                                    <input type="hidden"  id="budget-formatted" name="budget_formatted" value="$2,500">
+                                <div class="flex justify-between mt-2">
+                                    <span class="text-gray-500 text-sm">$100</span>
+                                    <span class="text-gray-700 font-medium" id="budget-value">$5,000</span>
+                                    <span class="text-gray-500 text-sm">$5000+</span>
+                                </div>
+                            </div>
+                            
+                            <button type="submit" onclick="sendMail()" class="bg-primary text-white px-8 py-3 rounded-button font-medium hover:bg-blue-600 transition-colors shadow-md whitespace-nowrap">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12 px-4 lg:px-6">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row justify-between items-center">
+                <div class="mb-8 lg:mb-0 text-center lg:text-left">
+                    <a href="#" class="text-2xl font-['Pacifico'] text-white mb-4 inline-block">Gabriels Grid</a>
+                    <p class="text-gray-400 max-w-md">
+                        Creating beautiful digital experiences through thoughtful design and attention to detail.
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div>
+                        <h4 class="font-semibold mb-4">Navigation</h4>
+                        <ul class="space-y-2">
+                            <a href="#top" class="text-gray-400 hover:text-white transition-colors">Home</a>
+
+                            <li><a href="#work" class="text-gray-400 hover:text-white transition-colors">Work</a></li>
+                            <li><a href="#about" class="text-gray-400 hover:text-white transition-colors">About</a></li>
+                            <li><a href="#contact" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-semibold mb-4">Services</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Web Design</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">UI/UX Design</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Mobile Design</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Brand Identity</a></li>
+                        </ul>
+                    </div>
+                    
+                   
+                </div>
+            </div>
+            
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+    </div>
+    
+    <!-- Cursor Effects -->
+    <div class="cursor-dot hidden md:block"></div>
+    <div class="cursor-outline hidden md:block"></div>
+
+    <script src="script.js" defer></script>
+</body>
+</html>
